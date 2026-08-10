@@ -1,0 +1,12 @@
+# Dependency directories
+node_modules/
+
+# Local configuration files
+.env
+
+# Local voice recording backups
+recordings/
+
+# System files
+.DS_Store
+Thumbs.db

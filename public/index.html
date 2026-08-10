@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Uraz Aslan'a Doğum Günü Sesli Notu Bırak 🎂</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Uraz Aslan'ın doğum günü için sesli not bırakın ve en güzel dileklerinizi paylaşın!">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Background decorative blobs -->
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+
+  <!-- Left Side Floating Decorations -->
+  <div class="decorations decor-left">
+    <!-- Balloon 1 -->
+    <div class="float-item balloon-1" title="Balon">
+      <svg viewBox="0 0 24 35" fill="currentColor">
+        <path d="M12 2C7.58 2 4 5.58 4 10c0 4.13 3.1 7.2 7 7.9v4.1c-1.2.3-2 1.3-2 2.5 0 1.4 1.1 2.5 2.5 2.5s2.5-1.1 2.5-2.5c0-1.2-.8-2.2-2-2.5v-4.1c3.9-.7 7-3.77 7-7.9 0-4.42-3.58-8-8-8Z"/>
+      </svg>
+    </div>
+    <!-- Cloud 1 -->
+    <div class="float-item cloud-1" title="Bulut">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M19.36 10.04a6 6 0 0 0-11.3-.88 4.5 4.5 0 0 0-.06 9h11.5a4.5 4.5 0 0 0 .86-8.12Z"/>
+      </svg>
+    </div>
+    <!-- Star 1 -->
+    <div class="float-item star-1" title="Yıldız">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 2l2.8 5.7 6.3.9-4.6 4.5 1.1 6.3-5.6-3-5.6 3 1.1-6.3-4.6-4.5 6.3-.9L12 2z"/>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Right Side Floating Decorations -->
+  <div class="decorations decor-right">
+    <!-- Balloon 2 -->
+    <div class="float-item balloon-2" title="Balon">
+      <svg viewBox="0 0 24 35" fill="currentColor">
+        <path d="M12 2C7.58 2 4 5.58 4 10c0 4.13 3.1 7.2 7 7.9v4.1c-1.2.3-2 1.3-2 2.5 0 1.4 1.1 2.5 2.5 2.5s2.5-1.1 2.5-2.5c0-1.2-.8-2.2-2-2.5v-4.1c3.9-.7 7-3.77 7-7.9 0-4.42-3.58-8-8-8Z"/>
+      </svg>
+    </div>
+    <!-- Gift Box -->
+    <div class="float-item gift-1" title="Hediye">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M20 8H4v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8ZM12 6.5C12 5 13.5 4 14.5 4s1.5 1 1.5 2.5c0 1.5-1.5 2.5-2.5 2.5S12 8 12 6.5ZM9.5 9c-1 0-2.5-1-2.5-2.5S8.5 4 9.5 4s2.5 1 2.5 2.5c0 1.5-1.5 2.5-2.5 2.5ZM5 8h14V6H5v2Z"/>
+      </svg>
+    </div>
+    <!-- Star 2 -->
+    <div class="float-item star-2" title="Yıldız">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 2l2.8 5.7 6.3.9-4.6 4.5 1.1 6.3-5.6-3-5.6 3 1.1-6.3-4.6-4.5 6.3-.9L12 2z"/>
+      </svg>
+    </div>
+  </div>
+
+  <main class="container">
+    <div class="card">
+      
+      <!-- Sibling Section (Centered Avatar & Speech Bubble) -->
+      <div class="avatar-section">
+        
+        <!-- Speech Bubble -->
+        <div class="speech-bubble-container">
+          <div class="speech-bubble" id="speechBubble">
+            <p>Doğum günüm için bir sesli not bırakır mısın? 🎂</p>
+          </div>
+          <div class="speech-pointer"></div>
+        </div>
+        
+        <!-- Avatar Photo Frame -->
+        <div class="avatar-frame-container">
+          <div class="avatar-frame">
+            <!-- Sibling image from WhatsApp -->
+            <img src="uraz.jpg" alt="Uraz Aslan" class="avatar-image">
+          </div>
+          <div class="avatar-glow"></div>
+        </div>
+        
+        <!-- Sibling Name -->
+        <h1 class="sibling-name">Uraz Aslan</h1>
+        <p class="birthday-date">5 Ekim 2026</p>
+      </div>
+
+      <!-- Divider line -->
+      <div class="divider"></div>
+
+      <!-- Voice Recorder Interface Section -->
+      <div class="recorder-section">
+        
+        <!-- STATE 1: IDLE -->
+        <div class="record-state active" id="stateIdle">
+          <p class="state-instruction">Uraz Aslan için en içten doğum günü mesajını kaydetmek için aşağıdaki mikrofona tıkla.</p>
+          
+          <button class="btn-record-trigger" id="btnStartRecord" aria-label="Kaydı Başlat">
+            <svg class="icon-mic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/>
+              <path d="M19 10v1a7 7 0 0 1-14 0v-1a1 1 0 1 0-2 0v1a9 9 0 0 0 8 8.94V21a1 1 0 1 0 2 0v-2.06A9 9 0 0 0 21 11v-1a1 1 0 1 0-2 0Z"/>
+            </svg>
+          </button>
+          
+          <span class="btn-label">Ses Kaydı Başlat</span>
+        </div>
+
+        <!-- STATE 2: RECORDING -->
+        <div class="record-state" id="stateRecording">
+          <div class="recording-indicator">
+            <span class="red-dot"></span>
+            <span class="timer" id="recordingTimer">00:00</span>
+          </div>
+          
+          <!-- Live Audio Visualizer -->
+          <div class="visualizer-container">
+            <canvas id="visualizerCanvas" width="300" height="80"></canvas>
+          </div>
+          
+          <div class="control-buttons">
+            <!-- Cancel Button -->
+            <button class="btn-control btn-cancel" id="btnCancelRecord" title="Vazgeç">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="icon-control">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0" />
+              </svg>
+              <span>Vazgeç</span>
+            </button>
+
+            <!-- Stop Button -->
+            <button class="btn-control btn-stop" id="btnStopRecord" title="Durdur ve Dinle">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="icon-control">
+                <path fill-rule="evenodd" d="M4.5 7.5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-9a3 3 0 0 1-3-3v-9Z" clip-rule="evenodd" />
+              </svg>
+              <span>Durdur</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- STATE 3: PREVIEW / PLAYBACK -->
+        <div class="record-state" id="statePreview">
+          <p class="state-instruction">Kaydettiğin sesli notu aşağıdan dinleyebilirsin.</p>
+          
+          <!-- Custom Audio Player -->
+          <div class="audio-player-container">
+            <audio id="audioPlayback" src=""></audio>
+            
+            <button class="player-btn" id="btnPlayPause" aria-label="Oynat / Duraklat">
+              <svg class="icon-play" id="iconPlay" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path fill-rule="evenodd" d="M4.5 5.653c0-1.427 1.529-2.33 2.779-1.643l11.54 6.347c1.295.712 1.295 2.573 0 3.286L7.28 19.99c-1.25.687-2.779-.217-2.779-1.643V5.653Z" clip-rule="evenodd" />
+              </svg>
+              <svg class="icon-pause hidden" id="iconPause" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path fill-rule="evenodd" d="M6.75 5.25a.75.75 0 0 1 .75-.75H9a.75.75 0 0 1 .75.75v13.5a.75.75 0 0 1-.75.75H7.5a.75.75 0 0 1-.75-.75V5.25Zm7.5 0a.75.75 0 0 1 .75-.75h1.5a.75.75 0 0 1 .75.75v13.5a.75.75 0 0 1-.75.75h-1.5a.75.75 0 0 1-.75-.75V5.25Z" clip-rule="evenodd" />
+              </svg>
+            </button>
+            
+            <div class="player-timeline">
+              <div class="timeline-bar" id="playerTimelineBar">
+                <div class="timeline-progress" id="playerTimelineProgress"></div>
+              </div>
+              <div class="time-displays">
+                <span id="playerCurrentTime">00:00</span>
+                <span id="playerDuration">00:00</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Form Details -->
+          <div class="input-group">
+            <label for="senderName">Adınız</label>
+            <input type="text" id="senderName" placeholder="Örn: Ahmet Yılmaz" autocomplete="name" required>
+          </div>
+
+          <div class="control-buttons">
+            <!-- Re-record Button -->
+            <button class="btn-control btn-cancel" id="btnReRecord">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="icon-control">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99" />
+              </svg>
+              <span>Yeniden Kaydet</span>
+            </button>
+
+            <!-- Send Button -->
+            <button class="btn-control btn-send" id="btnSendRecord">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="icon-control">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5" />
+              </svg>
+              <span>Uraz'a Gönder</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- STATE 4: SENDING / UPLOADING -->
+        <div class="record-state" id="stateSending">
+          <div class="loader-container">
+            <div class="cream-loader"></div>
+            <p class="state-instruction">Sesli notunuz iletiliyor...</p>
+            <p class="loading-subtext">Lütfen tarayıcınızı kapatmayın.</p>
+          </div>
+        </div>
+
+        <!-- STATE 5: SUCCESS -->
+        <div class="record-state" id="stateSuccess">
+          <div class="success-icon-container">
+            <svg class="icon-success" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043A3.745 3.745 0 0 1 12 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 0 1-3.296-1.043 3.745 3.745 0 0 1-1.043-3.296A3.745 3.745 0 0 1 3 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 0 1 1.043-3.296 3.746 3.746 0 0 1 3.296-1.043A3.746 3.746 0 0 1 12 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 0 1 3.296 1.043 3.746 3.746 0 0 1 1.043 3.296A3.745 3.745 0 0 1 21 12Z" />
+            </svg>
+          </div>
+          
+          <h2 class="success-title">Teşekkür Ederiz! 🎉</h2>
+          <p class="state-instruction">Sesli notun Uraz Aslan'a başarıyla gönderildi. Doğum günü dileklerin onun için çok değerli!</p>
+          
+          <button class="btn-action" id="btnRestart">Yeni Bir Mesaj Gönder</button>
+        </div>
+
+        <!-- ERROR NOTIFICATIONS -->
+        <div class="error-toast" id="errorToast">
+          <span id="errorMessage">Mikrofon izni alınamadı.</span>
+        </div>
+
+      </div>
+    </div>
+    
+    <footer class="footer">
+      <p>Sevgiyle Hazırlandı ♥</p>
+    </footer>
+  </main>
+
+  <!-- Script File -->
+  <script src="app.js"></script>
+</body>
+</html>
