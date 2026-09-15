@@ -123,15 +123,41 @@ app.post('/api/send-voice-note', upload.single('audio'), async (req, res) => {
       console.log('[E-posta Pasif] SMTP bilgileri girilmemiş. Ses kaydı sadece sunucuda yerel olarak kaydedildi.');
     }
 
+    // Google Drive Web App Forwarding
+    const googleDriveUrl = process.env.GOOGLE_DRIVE_WEB_APP_URL;
+    let driveUploaded = false;
+
+    if (googleDriveUrl) {
+      try {
+        const fileData = fs.readFileSync(audioFile.path).toString('base64');
+        const payload = new URLSearchParams();
+        payload.append('fileName', `${senderName}_${path.basename(audioFile.path)}`);
+        payload.append('mimeType', audioFile.mimetype || 'audio/webm');
+        payload.append('fileData', fileData);
+        payload.append('folderId', '1_df-UYbkNF05YbYcswbbTrPNHklCf9VG');
+
+        const driveRes = await fetch(googleDriveUrl, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: payload
+        });
+
+        if (driveRes.ok) {
+          driveUploaded = true;
+          console.log('[Google Drive] Ses dosyası başarıyla Google Drive klasörüne yüklendi!');
+        }
+      } catch (driveErr) {
+        console.error('[Google Drive Hatası]', driveErr.message || driveErr);
+      }
+    }
+
     return res.status(200).json({
       success: true,
-      message: emailSent 
-        ? 'Sesli notunuz başarıyla e-posta ile gönderildi!' 
-        : 'Sesli notunuz sunucuya başarıyla kaydedildi! (E-posta SMTP ayarları yapılmadığı için yerel klasöre kaydedildi.)',
+      message: driveUploaded
+        ? 'Sesli notunuz başarıyla Google Drive klasörüne yüklendi!'
+        : 'Sesli notunuz başarıyla kaydedildi!',
       filename: audioFile.filename,
-      localBackup: true,
-      emailSent: emailSent,
-      emailError: emailError
+      driveUploaded: driveUploaded
     });
 
   } catch (error) {
