@@ -321,12 +321,18 @@ async function sendVoiceNote() {
   
   formData.append('audio', audioBlob, `${senderName}_audio.${ext}`);
 
+  // Create AbortController for 20s timeout
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), 20000);
+
   try {
     const response = await fetch('/api/send-voice-note', {
       method: 'POST',
-      body: formData
+      body: formData,
+      signal: controller.signal
     });
 
+    clearTimeout(timeoutId);
     const result = await response.json();
 
     if (response.ok && result.success) {
@@ -336,8 +342,13 @@ async function sendVoiceNote() {
       changeState(statePreview);
     }
   } catch (error) {
+    clearTimeout(timeoutId);
     console.error('Gönderim hatası:', error);
-    showError('Bağlantı hatası oluştu. Lütfen sunucunun açık olduğundan emin olun.');
+    if (error.name === 'AbortError') {
+      showError('Bağlantı zaman aşımına uğradı. Sunucu uyanıyor olabilir, lütfen tekrar deneyin.');
+    } else {
+      showError('Bağlantı hatası oluştu. Lütfen bağlantınızı veya sunucuyu kontrol edin.');
+    }
     changeState(statePreview);
   }
 }

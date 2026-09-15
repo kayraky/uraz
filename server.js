@@ -69,6 +69,9 @@ app.post('/api/send-voice-note', upload.single('audio'), async (req, res) => {
         host: smtpHost,
         port: parseInt(smtpPort) || 587,
         secure: parseInt(smtpPort) === 465, // true for 465, false for others
+        connectionTimeout: 8000,  // 8 seconds connection timeout
+        greetingTimeout: 8000,    // 8 seconds greeting timeout
+        socketTimeout: 10000,     // 10 seconds socket inactivity timeout
         auth: {
           user: smtpUser,
           pass: smtpPass
@@ -103,11 +106,17 @@ app.post('/api/send-voice-note', upload.single('audio'), async (req, res) => {
       };
 
       try {
-        await transporter.sendMail(mailOptions);
+        // Enforce 10s maximum timeout for sendMail
+        const sendMailPromise = transporter.sendMail(mailOptions);
+        const timeoutPromise = new Promise((_, reject) => 
+          setTimeout(() => reject(new Error('E-posta sunucusu yanıt vermedi (Zaman aşımı).')), 10000)
+        );
+
+        await Promise.race([sendMailPromise, timeoutPromise]);
         emailSent = true;
         console.log(`[E-posta] E-posta başarıyla gönderildi: ${recipientEmail}`);
       } catch (err) {
-        console.error('[E-posta Hatası]', err);
+        console.error('[E-posta Hatası]', err.message || err);
         emailError = err.message;
       }
     } else {
