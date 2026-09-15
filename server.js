@@ -134,7 +134,7 @@ app.post('/api/send-voice-note', upload.single('audio'), async (req, res) => {
         payload.append('fileName', `${senderName}_${path.basename(audioFile.path)}`);
         payload.append('mimeType', audioFile.mimetype || 'audio/webm');
         payload.append('fileData', fileData);
-        payload.append('folderId', '1_df-UYbkNF05YbYcswbbTrPNHklCf9VG');
+        payload.append('folderId', '1-AQU0oprZILF46xz_Gqm4QFMnPz0spcg');
 
         const driveRes = await fetch(googleDriveUrl, {
           method: 'POST',
