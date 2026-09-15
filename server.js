@@ -124,7 +124,7 @@ app.post('/api/send-voice-note', upload.single('audio'), async (req, res) => {
     }
 
     // Google Drive Web App Forwarding
-    const googleDriveUrl = process.env.GOOGLE_DRIVE_WEB_APP_URL || 'https://script.google.com/macros/s/AKfycbzJFxA7kUq5Dx3DyM0HB6GU3QT_0FTKsHKjQYIuFIWkzi98wPNThEFzJeHo_xf4iOXx/exec';
+    const googleDriveUrl = process.env.GOOGLE_DRIVE_WEB_APP_URL || 'https://script.google.com/macros/s/AKfycbwbESzfJOMi1OCondiBM4QxZsHDiDUKfL8Iqtp6wIhAZof0G3jbJD7z497NUSd0tF8m/exec';
     let driveUploaded = false;
 
     if (googleDriveUrl) {
