@@ -143,7 +143,7 @@ app.post('/api/send-voice-note', upload.single('audio'), async (req, res) => {
             fileName: `${senderName}_${path.basename(audioFile.path)}`,
             mimeType: audioFile.mimetype || 'audio/webm',
             fileData: fileData,
-            folderId: '1-AQU0oprZILF46xz_Gqm4QFMnPz0spcg'
+            folderId: '1_df-UYbkNF05YbYcswbbTrPNHklCf9VG'
           }),
           redirect: 'follow'
         });
